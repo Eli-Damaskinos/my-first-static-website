@@ -4,8 +4,11 @@ const pages = {
   production: "Gas Production",
   co2: "CO₂ Reporting",
   feedstock: "Feedstock",
+  lagoons: "Lagoons",
+  clamptracking: "Clamp Tracking",
   logistics: "Trailer Logistics",
-  settings: "Settings"
+  accountsettings: "Account Settings",
+  reports: "Reports",
 };
 
 const pageTitle = document.getElementById("page-title");
