@@ -10,7 +10,8 @@ const pages = {
   accountsettings: "Account Settings",
   reports: "Reports",
   injections: "Injections",
-  energy: "Energy Centre"
+  energy: "Energy Centre",
+  alerts: "Alerts",
 };
 
 const pageContent = document.getElementById("page-content");
