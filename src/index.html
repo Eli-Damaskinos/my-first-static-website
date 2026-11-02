@@ -4,27 +4,71 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Operations Portal</title>
   <link rel="stylesheet" href="styles.css">
-  <title>My Azure Portal</title>
+  <script src="app.js" defer></script>
 </head>
 
 <body>
-  <header>
-    <h2>My Azure Portal</h2>
-    <span>Development Environment</span>
-  </header>
+  <div class="app">
 
-  <main>
-    <h1>Welcome to my portal</h1>
-    <p>My first website hosted on Microsoft Azure.</p>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-icon">O</div>
+        <span>Operations Portal</span>
+      </div>
 
-    <section class="card">
-      <h2>JavaScript Test</h2>
-      <p id="message">Press the button to test JavaScript.</p>
-      <button id="testButton">Run Test</button>
-    </section>
-  </main>
+      <nav aria-label="Main navigation">
+        <p class="nav-heading">WORKSPACE</p>
 
-  <script src="app.js"></script>
+        <a href="#overview" class="nav-link active">
+          Overview
+        </a>
+
+        <p class="nav-heading">REPORTING</p>
+
+        <a href="#production" class="nav-link">
+          Gas Production
+        </a>
+
+        <a href="#co2" class="nav-link">
+          CO₂ Reporting
+        </a>
+
+        <a href="#feedstock" class="nav-link">
+          Feedstock
+        </a>
+
+        <p class="nav-heading">OPERATIONS</p>
+
+        <a href="#logistics" class="nav-link">
+          Trailer Logistics
+        </a>
+
+        <a href="#settings" class="nav-link">
+          Settings
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        Portal v0.1
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <div class="main-area">
+      <header class="topbar">
+        <span>Reporting Workspace</span>
+        <span class="environment">Demo Environment</span>
+      </header>
+
+      <main class="content">
+        <h1 id="page-title">Overview</h1>
+      </main>
+    </div>
+
+  </div>
 </body>
 </html>
+
