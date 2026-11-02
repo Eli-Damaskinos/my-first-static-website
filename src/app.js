@@ -13,6 +13,7 @@ const pages = {
   energy: "Energy Centre",
   alerts: "Alerts",
   digesters: "Digesters",
+  forecasting: "Forecasting"
 };
 
 // Page-specific JavaScript modules
