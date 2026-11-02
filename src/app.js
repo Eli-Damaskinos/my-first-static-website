@@ -12,6 +12,7 @@ const pages = {
   injections: "Injections",
   energy: "Energy Centre",
   alerts: "Alerts",
+  digesters: "Digesters",
 };
 
 // Page-specific JavaScript modules
