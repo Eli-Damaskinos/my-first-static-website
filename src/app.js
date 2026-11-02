@@ -9,28 +9,26 @@ const pages = {
   logistics: "Trailer Logistics",
   accountsettings: "Account Settings",
   reports: "Reports",
+  injections: "Injections",
+  energy: "Energy Centre"
 };
 
-const pageTitle = document.getElementById("page-title");
+const pageContent = document.getElementById("page-content");
 const navLinks = document.querySelectorAll(".nav-link");
 
-function showPage() {
-  // Read the page name from the URL
+let navigationId = 0;
+
+async function showPage() {
+  const requestId = ++navigationId;
+
+  // Get page from URL hash
   const requestedPage = window.location.hash.slice(1);
 
-  // Use Overview if no valid page is specified
-  const currentPage =
-    Object.hasOwn(pages, requestedPage)
-      ? requestedPage
-      : "overview";
+  const currentPage = Object.hasOwn(pages, requestedPage)
+    ? requestedPage
+    : "overview";
 
-  // Change the heading
-  pageTitle.textContent = pages[currentPage];
-
-  // Update browser tab title
-  document.title = pages[currentPage] + " | Operations Portal";
-
-  // Highlight the currently selected sidebar link
+  // Highlight active sidebar link
   navLinks.forEach(link => {
     const isActive =
       link.getAttribute("href") === "#" + currentPage;
@@ -43,10 +41,37 @@ function showPage() {
       link.removeAttribute("aria-current");
     }
   });
+
+  document.title = pages[currentPage] + " | Operations Portal";
+
+  pageContent.textContent = "Loading...";
+
+  try {
+    // Fetch the separate HTML file
+    const response = await fetch(
+      `pages/${currentPage}.html`
+    );
+
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`);
+    }
+
+    const html = await response.text();
+
+    // Avoid displaying an outdated navigation response
+    if (requestId !== navigationId) return;
+
+    // Display the page
+    pageContent.innerHTML = html;
+
+  } catch (error) {
+    if (requestId !== navigationId) return;
+
+    console.error("Page loading failed:", error);
+    pageContent.textContent = "Could not load this page.";
+  }
 }
 
-// Run when someone clicks a navigation link
 window.addEventListener("hashchange", showPage);
 
-// Run when the website first loads
 showPage();
