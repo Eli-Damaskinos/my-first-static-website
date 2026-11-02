@@ -1,4 +1,52 @@
 
-<section class="page">
-  <h1>Production</h1>
+<section class="production-page">
+
+  <h1>Gas Production</h1>
+
+  <p class="page-description">
+    Monitor biomethane production and site performance.
+  </p>
+
+  <button id="load-data" class="sample-button">
+    Load Sample Data
+  </button>
+
+  <p id="data-status" role="status" aria-live="polite">
+    No data loaded. Demo values only.
+  </p>
+
+  <div class="kpi-grid">
+
+    <article class="kpi-card">
+      <span>Today's Production</span>
+      <h2 data-kpi="today">—</h2>
+      <small>Nm³</small>
+    </article>
+
+    <article class="kpi-card">
+      <span>Current Flow Rate</span>
+      <h2 data-kpi="flow">—</h2>
+      <small>Nm³/h</small>
+    </article>
+
+    <article class="kpi-card">
+      <span>Monthly Production</span>
+      <h2 data-kpi="monthly">—</h2>
+      <small>Nm³</small>
+    </article>
+
+    <article class="kpi-card">
+      <span>Target Achievement</span>
+      <h2 data-kpi="target">—</h2>
+      <small>%</small>
+    </article>
+
+  </div>
+
+  <div class="chart-placeholder">
+    <h2>Production Over Time</h2>
+    <p>Chart will appear here.</p>
+  </div>
+
 </section>
+

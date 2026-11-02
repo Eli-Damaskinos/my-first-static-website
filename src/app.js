@@ -14,22 +14,33 @@ const pages = {
   alerts: "Alerts",
 };
 
+// Page-specific JavaScript modules
+const pageModules = {
+  production: () => import("./pages/production.js")
+};
+
 const pageContent = document.getElementById("page-content");
 const navLinks = document.querySelectorAll(".nav-link");
 
 let navigationId = 0;
+let cleanupCurrentPage = null;
 
 async function showPage() {
   const requestId = ++navigationId;
 
-  // Get page from URL hash
+  // Cleanup the previous page
+  if (cleanupCurrentPage) {
+    cleanupCurrentPage();
+    cleanupCurrentPage = null;
+  }
+
   const requestedPage = window.location.hash.slice(1);
 
   const currentPage = Object.hasOwn(pages, requestedPage)
     ? requestedPage
     : "overview";
 
-  // Highlight active sidebar link
+  // Update sidebar highlighting
   navLinks.forEach(link => {
     const isActive =
       link.getAttribute("href") === "#" + currentPage;
@@ -48,10 +59,8 @@ async function showPage() {
   pageContent.textContent = "Loading...";
 
   try {
-    // Fetch the separate HTML file
-    const response = await fetch(
-      `pages/${currentPage}.html`
-    );
+    // Load the HTML page
+    const response = await fetch(`pages/${currentPage}.html`);
 
     if (!response.ok) {
       throw new Error(`HTTP ${response.status}`);
@@ -59,11 +68,22 @@ async function showPage() {
 
     const html = await response.text();
 
-    // Avoid displaying an outdated navigation response
     if (requestId !== navigationId) return;
 
-    // Display the page
+    // Insert the page into the main layout
     pageContent.innerHTML = html;
+
+    // Load page-specific JavaScript if it exists
+    const loadModule = pageModules[currentPage];
+
+    if (loadModule) {
+      const module = await loadModule();
+
+      if (requestId !== navigationId) return;
+
+      // Initialise the page
+      cleanupCurrentPage = module.init(pageContent);
+    }
 
   } catch (error) {
     if (requestId !== navigationId) return;
