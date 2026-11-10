@@ -49,6 +49,10 @@
   margin-top: 90px;
 }
 
+.production-page .chart-container {
+  position: relative;
+  height: 280px;
+}
 
 .production-page .sample-button {
   background: #2563eb;
