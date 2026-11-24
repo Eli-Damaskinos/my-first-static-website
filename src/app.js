@@ -18,7 +18,8 @@ const pages = {
 
 // Page-specific JavaScript modules
 const pageModules = {
-  production: () => import("./pages/production.js")
+  production: () => import("./pages/production.js"),
+  logistics: () => import("./pages/logistics.js")
 };
 
 const pageContent = document.getElementById("page-content");
