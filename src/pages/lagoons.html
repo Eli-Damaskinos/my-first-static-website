@@ -1,4 +1,93 @@
 
 <section class="page">
-  <h1>Lagoons</h1>
+  <div class="lagoon-page">
+    <header class="lagoon-header">
+      <div>
+        <h1>Lagoons</h1>
+        <p class="lagoon-description">Storage levels and digestate conditions across the site.</p>
+      </div>
+      <span class="demo-badge">Demo data</span>
+    </header>
+
+    <div class="lagoon-summary" aria-label="Lagoon summary">
+      <article class="lagoon-summary-card">
+        <span class="summary-label">Total capacity in use</span>
+        <strong>62%</strong>
+        <span class="summary-detail">3 lagoons monitored</span>
+      </article>
+      <article class="lagoon-summary-card">
+        <span class="summary-label">Available storage</span>
+        <strong>4,560 <small>m³</small></strong>
+        <span class="summary-detail">of 12,000 m³ total capacity</span>
+      </article>
+      <article class="lagoon-summary-card">
+        <span class="summary-label">Attention required</span>
+        <strong>1 <small>item</small></strong>
+        <span class="summary-detail">Lagoon 2 level is elevated</span>
+      </article>
+    </div>
+
+    <section class="lagoon-section" aria-labelledby="lagoon-levels-heading">
+      <div class="lagoon-section-heading">
+        <div>
+          <h2 id="lagoon-levels-heading">Storage levels</h2>
+          <p>Estimated volume compared with each lagoon's working capacity.</p>
+        </div>
+        <span class="updated-label">Updated today, 10:30</span>
+      </div>
+
+      <div class="lagoon-level-list">
+        <article class="lagoon-level-card">
+          <div class="lagoon-card-heading">
+            <div>
+              <h3>Lagoon 1</h3>
+              <span class="lagoon-meta">Primary storage · 5,000 m³</span>
+            </div>
+            <span class="lagoon-status status-normal">Normal</span>
+          </div>
+          <div class="level-values">
+            <strong>3,100 <small>m³</small></strong>
+            <span>62% full</span>
+          </div>
+          <progress value="62" max="100" aria-label="Lagoon 1 is 62 percent full">62%</progress>
+          <div class="level-footnote"><span>0 m³</span><span>Working capacity: 5,000 m³</span></div>
+        </article>
+
+        <article class="lagoon-level-card">
+          <div class="lagoon-card-heading">
+            <div>
+              <h3>Lagoon 2</h3>
+              <span class="lagoon-meta">Secondary storage · 4,000 m³</span>
+            </div>
+            <span class="lagoon-status status-attention">Monitor level</span>
+          </div>
+          <div class="level-values">
+            <strong>3,280 <small>m³</small></strong>
+            <span>82% full</span>
+          </div>
+          <progress class="level-high" value="82" max="100" aria-label="Lagoon 2 is 82 percent full">82%</progress>
+          <div class="level-footnote"><span>0 m³</span><span>Working capacity: 4,000 m³</span></div>
+        </article>
+
+        <article class="lagoon-level-card">
+          <div class="lagoon-card-heading">
+            <div>
+              <h3>Lagoon 3</h3>
+              <span class="lagoon-meta">Seasonal storage · 3,000 m³</span>
+            </div>
+            <span class="lagoon-status status-normal">Normal</span>
+          </div>
+          <div class="level-values">
+            <strong>1,060 <small>m³</small></strong>
+            <span>35% full</span>
+          </div>
+          <progress value="35" max="100" aria-label="Lagoon 3 is 35 percent full">35%</progress>
+          <div class="level-footnote"><span>0 m³</span><span>Working capacity: 3,000 m³</span></div>
+        </article>
+      </div>
+    </section>
+
+    <p class="lagoon-disclaimer">Illustrative sample values only — not live site measurements.</p>
+  </div>
 </section>
+

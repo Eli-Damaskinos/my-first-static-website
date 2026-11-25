@@ -1,0 +1,199 @@
+.lagoon-page {
+  max-width: 1200px;
+}
+
+.lagoon-header,
+.lagoon-section-heading,
+.lagoon-card-heading,
+.level-values,
+.level-footnote {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.lagoon-description,
+.lagoon-section-heading p {
+  color: #64748b;
+  margin: 10px 0 0;
+}
+
+.demo-badge,
+.lagoon-status {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 7px 11px;
+  white-space: nowrap;
+}
+
+.demo-badge {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.lagoon-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.lagoon-summary-card,
+.lagoon-level-card,
+.lagoon-section {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+}
+
+.lagoon-summary-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+}
+
+.summary-label,
+.summary-detail,
+.lagoon-meta,
+.level-footnote,
+.updated-label {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.lagoon-summary-card strong {
+  color: #1e293b;
+  font-size: 27px;
+}
+
+.lagoon-summary-card small,
+.level-values small {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.lagoon-section {
+  margin-top: 24px;
+  padding: 24px;
+}
+
+.lagoon-section-heading {
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.lagoon-section-heading h2 {
+  font-size: 19px;
+  margin: 0;
+}
+
+.updated-label {
+  white-space: nowrap;
+}
+
+.lagoon-level-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+}
+
+.lagoon-level-card {
+  min-width: 0;
+  padding: 18px;
+}
+
+.lagoon-card-heading {
+  align-items: flex-start;
+}
+
+.lagoon-card-heading h3 {
+  font-size: 16px;
+  margin: 0 0 5px;
+}
+
+.lagoon-status {
+  padding: 6px 9px;
+}
+
+.status-normal {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+.status-attention {
+  background: #fffbeb;
+  color: #b45309;
+}
+
+.level-values {
+  margin: 25px 0 12px;
+}
+
+.level-values strong {
+  font-size: 23px;
+}
+
+.level-values > span {
+  color: #475569;
+  font-size: 13px;
+}
+
+.lagoon-level-card progress {
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 9px;
+  border: 0;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.lagoon-level-card progress::-webkit-progress-bar {
+  background: #e2e8f0;
+  border-radius: 999px;
+}
+
+.lagoon-level-card progress::-webkit-progress-value {
+  background: #16a34a;
+  border-radius: 999px;
+}
+
+.lagoon-level-card progress::-moz-progress-bar {
+  background: #16a34a;
+  border-radius: 999px;
+}
+
+.lagoon-level-card progress.level-high::-webkit-progress-value {
+  background: #f59e0b;
+}
+
+.lagoon-level-card progress.level-high::-moz-progress-bar {
+  background: #f59e0b;
+}
+
+.level-footnote {
+  margin-top: 10px;
+}
+
+.lagoon-disclaimer {
+  color: #64748b;
+  font-size: 12px;
+  margin-top: 16px;
+}
+
+@media (max-width: 600px) {
+  .lagoon-header,
+  .lagoon-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .lagoon-section {
+    padding: 18px;
+  }
+}
